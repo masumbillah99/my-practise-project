@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+:root {
+    --primary-font: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: var(--primary-font);
+}
+
+.header {
+    margin: 90px 120px;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+.menubar {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+    font-weight: 600;
+}
+.menubar li{
+    cursor: pointer;
+}
+.header-info {
+    margin: 100px 130px;
+    display: flex;
+    align-items: center;
+    gap: 131px;
+    background-image: url(./images/Circle\ design.svg);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+
+.hide {
+    display: none;
+}
