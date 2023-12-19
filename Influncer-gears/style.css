@@ -1,46 +1,334 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-
-:root {
-    --primary-font: 'Poppins', sans-serif;
-}
-
+/* common styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body {
-    font-family: var(--primary-font);
+:root {
+  --primary-font: "Poppins", sans-serif;
+}
+.book-btn {
+  color: white;
+  background-color: orangered;
+  padding: 13px 21px;
+  border-radius: 15px;
+  border: none;
+  font-size: larger;
+  font-weight: bold;
+  cursor: pointer;
 }
 
+/* body styles */
+body {
+  font-family: var(--primary-font);
+}
+main {
+  max-width: 1280px;
+  margin: auto;
+}
+
+/* header styles */
 .header {
-    margin: 90px 120px;
+  max-width: 1280px;
+  margin: 20px auto;
 }
 .navbar {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
 }
-.menubar {
-    display: flex;
-    gap: 30px;
-    list-style-type: none;
-    font-weight: 600;
+nav ul {
+  display: flex;
+  justify-items: center;
+  gap: 7px;
 }
-.menubar li{
+nav ul li {
+  list-style-type: none;
+  margin-left: 20px;
+}
+nav ul li a {
+  font-weight: bold;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+}
+#menu-btn {
+  display: none;
+  border: none;
+}
+#menu-btn img {
+  width: 20px;
+  margin-top: 5px;
+}
+.cart-img {
+  display: none;
+}
+.cart-img img {
+  width: 50px;
+}
+
+.open-menu {
+  background: green;
+  position: absolute;
+  top: 50px;
+}
+
+.close-menu {
+  background: green;
+  position: absolute;
+  top: -150px;
+}
+
+@media screen and (max-width: 1200px) {
+  .header {
+    margin: 20px 10px 20px 20px;
+  }
+  .navbar {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  #menu-list {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    z-index: 2;
+    color: white;
+    background-color: #551A8B;
+    font-family: sans-serif;
+    transition: 0.5s ease-in-out;
+  }
+  nav ul {
+    margin-top: 120px;
+    gap: 31px;
+  }
+  nav ul li a {
+    color: white;
+  }
+  .menubar {
+    flex-direction: column;
+    /* display: none; */
+  }
+  #menu-btn {
+    display: block;
+    width: 50px;
+    height: 50px;
+    right: 30px;
+    top: 20px;
+    background: #551A8B;
+    position: fixed;
+    text-align: center;
     cursor: pointer;
-}
-.header-info {
-    margin: 100px 130px;
-    display: flex;
-    align-items: center;
-    gap: 131px;
-    background-image: url(./images/Circle\ design.svg);
-    background-repeat: no-repeat;
-    background-position: bottom right;
+    border-radius: 3;
+    z-index: 3;
+  }
+  .cart-img img {
+    display: block;
+  }
 }
 
+/* header banner styles */
+.header-banner {
+  background-image: url(./images/Circle\ design.svg);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: contain;
+  margin: 120px 0px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 131px;
+}
+.header-banner div h1 {
+  font-size: 75px;
+}
+.header-banner div p {
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+  font-size: larger;
+  font-weight: 500;
+  margin: 12px 0 20px;
+}
 
-.hide {
-    display: none;
+@media screen and (max-width: 992px) {
+  .header-banner {
+    background-position: top center;
+    background-size: auto;
+    flex-direction: column-reverse;
+    margin: 80px 10px;
+    text-align: center;
+  }
+  .header-banner div h1 {
+    font-size: 45px;
+  }
+}
+
+/* company section style */
+.company-sect {
+  margin: 120px 0;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 992px) {
+  .company-sect {
+    margin: 120px 10px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+/* popular collection styles */
+.popular-sect {
+  margin: 120px 0;
+  background-color: gray;
+}
+.popular-sect h1 {
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+.popular-sect .popular-collection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
+.popular-collection .card {
+  background-color: white;
+  border-radius: 9px;
+  width: 360px;
+  padding: 30px 30px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+.card h3 {
+  font-size: 2rem;
+}
+.card h5 {
+  font-size: 1.7rem;
+}
+.card p {
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+}
+.see-more {
+  text-align: right;
+  margin: 20px 25px;
+}
+.see-more-btn {
+  background-color: white;
+  color: peru;
+  border: none;
+  font-size: larger;
+  font-weight: bold;
+  cursor: pointer;
+  transition: underline 0.3s ease-in-out;
+}
+.see-more-btn:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1200px) {
+  .popular-sect .popular-collection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .popular-sect {
+    margin: 120px 10px;
+  }
+  .popular-sect .popular-collection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .see-more {
+    margin: 20px 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .popular-sect .popular-collection {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* featured collection styles */
+.featured-sect {
+  margin: 120px 0;
+  text-align: center;
+}
+.featured-sect h3 {
+  font-size: 35px;
+}
+.featured-sect p {
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+  margin: 20px 0;
+}
+.join-btn {
+  background-color: tomato;
+  color: white;
+  border: none;
+  border-radius: 11px;
+  padding: 15px 20px;
+  font-size: larger;
+  font-weight: bold;
+  cursor: pointer;
+}
+.featured-sect img {
+  width: 700px;
+  margin: 30px 0 0;
+}
+
+/* @media screen and (max-width: 992px) {
+  .featured-sect {
+    margin: 120px 10px;
+  }
+  .featured-sect img {
+    width: 500px;
+  }
+} */
+
+@media screen and (max-width: 768px) {
+  .featured-sect {
+    margin: 120px 10px;
+  }
+  .featured-sect img {
+    width: 350px;
+  }
+}
+
+/* footer styles */
+footer {
+  background-color: rgba(54, 15, 143, 0.76);
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 50px 10px;
+}
+
+footer div {
+  display: flex;
+  justify-items: center;
+  gap: 7px;
+}
+
+footer div a {
+  display: block;
 }
